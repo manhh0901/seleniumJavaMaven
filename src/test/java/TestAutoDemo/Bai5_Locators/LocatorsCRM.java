@@ -49,6 +49,12 @@ public class LocatorsCRM {
         driver.findElement(By.xpath("//div[@id='top_search_button']"));// button search
         driver.findElement(By.xpath("//span[normalize-space()='Customers Summary']")); // title customer summary
 
+        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/client' and contains(@class, 'btn-primary')]"));
+        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/import' and contains(@class, 'btn-primary')]"));
+        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/all_contacts' and contains(@class, 'btn-default')]"));
+
+
+
         driver.findElement(By.xpath("//span[normalize-space()='Total Customers']")); //text total customer
         driver.findElement(By.xpath("//span[normalize-space()='Active Customers']"));
         driver.findElement(By.xpath("//span[normalize-space()='Inactive Customers']"));
