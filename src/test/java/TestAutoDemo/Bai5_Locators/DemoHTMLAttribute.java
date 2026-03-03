@@ -30,6 +30,17 @@ public class DemoHTMLAttribute {
         // partial textlinks
         driver.findElement(By.partialLinkText("Forgot")).click();
 
+        //tag name
+        // Mot web co nhieu phan tu tag name giong nhau.
+        driver.findElement(By.tagName("h2"));
+
+        //class name
+        driver.findElement(By.className("btn-primary"));
+
+        // dung xpPath tuyet doi
+        //html/body/div[1]/div/div/div[1]/div[2]/div/div/form/div[2]/button
+
+
 
         Thread.sleep(2000);
         driver.quit();
