@@ -54,13 +54,51 @@ public class LocatorsCRM {
         driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/all_contacts' and contains(@class, 'btn-default')]"));
 
 
-
         driver.findElement(By.xpath("//span[normalize-space()='Total Customers']")); //text total customer
         driver.findElement(By.xpath("//span[normalize-space()='Active Customers']"));
         driver.findElement(By.xpath("//span[normalize-space()='Inactive Customers']"));
         driver.findElement(By.xpath("//span[normalize-space()='Active Contacts']"));
         driver.findElement(By.xpath("//span[normalize-space()='Inactive Contacts']"));
         driver.findElement(By.xpath("//span[@data-title = 'Contacts Logged In Today']"));
+
+        driver.findElement(By.xpath("//select[@name = 'clients_length']"));
+        driver.findElement(By.xpath("//button[contains(@class, 'buttons-collection')]"));
+        driver.findElement(By.xpath("//span[text() = 'Bulk Actions']"));
+        driver.findElement(By.xpath("//button[@data-original-title = 'Reload']"));
+        driver.findElement(By.xpath("//span[@class = 'input-group-addon']"));
+        driver.findElement(By.xpath("//input[@type= 'search' and @class = 'form-control input-sm']"));
+
+        //list table
+        driver.findElement(By.xpath("//input[@id = 'mass_select_all']"));//check box all
+        driver.findElement(By.xpath("//th[@id = 'th-number']"));//sort
+        driver.findElement(By.xpath("//th[@id = 'th-company']"));// header company
+        driver.findElement(By.xpath("//th[@id = 'th-primary-contact']"));
+        driver.findElement(By.xpath("//th[@id = 'th-primary-contact-email']"));
+        driver.findElement(By.xpath("//th[@id = 'th-phone']"));
+        driver.findElement(By.xpath("//th[@id = 'th-active']"));
+        driver.findElement(By.xpath("//th[@id = 'th-groups']"));
+        driver.findElement(By.xpath("//th[@id = 'th-date-created']"));
+
+        // add new customer
+        driver.findElement(By.xpath("//label[@for = 'company']"));
+        driver.findElement(By.xpath("//input[@id = 'company']"));
+        driver.findElement(By.xpath("//label[@for = 'vat']"));
+        driver.findElement(By.xpath("//input[@id = 'vat']"));
+        driver.findElement(By.xpath("//label[@for = 'phonenumber']"));
+        driver.findElement(By.xpath("//input[@id = 'phonenumber']"));
+        driver.findElement(By.xpath("//label[@for = 'website']"));
+        driver.findElement(By.xpath("//input[@id = 'website']"));
+        driver.findElement(By.xpath("//label[text()= 'Groups']"));
+        driver.findElement(By.xpath("//button[@type= 'button' and @data-id='groups_in[]']"));
+
+
+
+
+
+
+
+
+
 
 
 
