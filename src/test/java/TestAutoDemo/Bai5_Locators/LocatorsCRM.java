@@ -17,7 +17,7 @@ public class LocatorsCRM {
         driver.get("https://crm.anhtester.com/admin/authentication");
 
         // xpath tuyet doi của trang login
-        driver.findElement(By.xpath("/html/body/div/h1"));// title Login
+        String title_login1 = "/html/body/div/h1";// title Login
         driver.findElement(By.xpath ("/html/body/div/div[2]/form/div[1]/label"));// label Email Address
         driver.findElement(By.xpath("/html/body/div/div[2]/form/div[1]/input"));// input Email Address
         driver.findElement(By.xpath ("/html/body/div/div[2]/form/div[2]/label"));// label Password
@@ -90,6 +90,33 @@ public class LocatorsCRM {
         driver.findElement(By.xpath("//input[@id = 'website']"));
         driver.findElement(By.xpath("//label[text()= 'Groups']"));
         driver.findElement(By.xpath("//button[@type= 'button' and @data-id='groups_in[]']"));
+        driver.findElement(By.xpath("//a[@class ='btn btn-default' and @data-toggle ='modal' ]"));
+        driver.findElement(By.xpath("//label[text() = 'Currency']"));
+        driver.findElement(By.xpath("//button[@class='btn dropdown-toggle btn-default bs-placeholder' and @data-id = 'default_currency']"));
+        driver.findElement(By.xpath("//label[text() = 'Currency']"));
+        driver.findElement(By.xpath("//label[normalize-space()='Default Language']"));
+        driver.findElement(By.xpath("//button[@data-id='default_language']"));
+        driver.findElement(By.xpath("//label[text()='Address']"));
+        driver.findElement(By.xpath("//textarea[@id='address']"));
+        driver.findElement(By.xpath("//label[text()='City' and @for = 'city']"));
+        driver.findElement(By.xpath("//input[@id='city']"));
+        driver.findElement(By.xpath("//label[text()='State' and @for = 'state']"));
+        driver.findElement(By.xpath("//input[@id='state']"));
+        driver.findElement(By.xpath("//label[text()='Zip Code' and @for ='zip']"));
+        driver.findElement(By.xpath("//input[@id='zip']"));
+        driver.findElement(By.xpath("//label[@for='country']"));
+        driver.findElement(By.xpath("//button[@data-id='country']"));
+        driver.findElement(By.xpath("//button[normalize-space()='Save and create contact']"));;
+
+        driver.findElement(By.xpath("//button[normalize-space()='Save' and contains(@class, 'only-save')]"));
+
+
+
+
+
+
+
+
 
 
 
