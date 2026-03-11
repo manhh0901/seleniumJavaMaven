@@ -59,10 +59,7 @@ public class DemoXpathAbsolute {
         //11. Xác định thông qua parent và child
 //        Ví dụ: //div[@id='expense-dropzone']/parent::form
 //        Nó tìm các thẻ form với vai trò là cha của //div[@id='expense-dropzone']
-
-
-
-
+        
 
         Thread.sleep(2000);
         driver.quit();

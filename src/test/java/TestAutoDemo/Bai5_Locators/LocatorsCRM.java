@@ -4,42 +4,45 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import javax.swing.plaf.PanelUI;
 import java.time.Duration;
 
 public class LocatorsCRM {
+    // mở trag url
+    public static String url = "https://crm.anhtester.com/admin/authentication";
+
+    // trang login
+    public static String titleLogin = "//h1[normalize-space()='Login']";
+    public static String inputEmail = "//label[@for='email']";
+    public static String inputPwd = "//input[@id='password']";
+    public static String checkboxRemember = "//input[@id='remember']";
+    public static String buttonLogin = "//button[contains(@class,'btn-primary')]" ;
+    public static String forgotPwd = "//a[@href='https://crm.anhtester.com/admin/authentication/forgot_password']";
+    public  static String messageError = "//div[contains(@class,'alert-danger')]";
+    public static String alertRequireEmail = "//div[normalize-space()='The Email Address field is required']";
+    public static String alertRequirePwd = "//div[normalize-space()='The Password field is required']";
+
+    // trang dashboard
+
+    public static String menuDashboard = "//span[@class='menu-text' and normalize-space()='Dashboard']";
+    public static String menuCustomer = "//span[@class='menu-text' and normalize-space()='Customer']";
+    public static String menuContracts= "//span[@class='menu-text' and normalize-space()='Contracts']";
+    public static String menuProjects = "//span[@class='menu-text' and normalize-space()='Projects']";
+    public static String menuSales = "//span[@class='menu-text' and normalize-space()='Sales']";
+
+    //
+    public static String addNewCus = "//a[contains(@href, 'client') and contains(@class, 'btn-primary')]";
+    public static String importCustomer = "//a[contains(@href, 'import') and contains(@class, 'btn-primary')]";
+    public static String allContacts= "//a[contains(@href, 'all_contacts') and contains(@class, 'btn-default')]";
+    public static String searchCustomer;
+
     public static void main(String[] args) {
         WebDriver driver;
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        //Mở trang CRM
-        driver.get("https://crm.anhtester.com/admin/authentication");
 
-        // xpath tuyet doi của trang login
-        String title_login1 = "/html/body/div/h1";// title Login
-        driver.findElement(By.xpath ("/html/body/div/div[2]/form/div[1]/label"));// label Email Address
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[1]/input"));// input Email Address
-        driver.findElement(By.xpath ("/html/body/div/div[2]/form/div[2]/label"));// label Password
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[2]/input"));// input Password
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[2]/input"));// input Password
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[3]/div/label"));// remember me
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[3]/div/input")); //check box remember
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[4]/button"));// Button login
-        driver.findElement(By.xpath("/html/body/div/div[2]/form/div[5]/a")); //Forgot password
-        // xpath menu customer
-        driver.findElement(By.xpath("/html/body/aside/ul/li[3]"));
-
-        // xpath tuong doi 1-5
-        driver.findElement(By.xpath("//h1[normalize-space()='Login']"));// title Login
-        driver.findElement(By.xpath("//label[@for='email']"));// label
-        driver.findElement(By.xpath("//input[@id='email']")); // input email
-        driver.findElement(By.xpath("//label[@for='password']"));// label password
-        driver.findElement(By.xpath("//input[@id='password']")); // input password
-        driver.findElement(By.xpath("//input[@id='remember']"));// checkbox remember
-        driver.findElement(By.xpath("//label[@for='remember']"));// Label remember
-        driver.findElement(By.xpath("//button[contains(@class,'btn-primary')]"));//button login
-        driver.findElement(By.xpath("//a[@href='https://crm.anhtester.com/admin/authentication/forgot_password']")); // forgot password
 
         //xpath 1-5 menu Customers
         driver.findElement(By.xpath("//li[@class='menu-item-customers']"));// Menu customer
@@ -49,9 +52,7 @@ public class LocatorsCRM {
         driver.findElement(By.xpath("//div[@id='top_search_button']"));// button search
         driver.findElement(By.xpath("//span[normalize-space()='Customers Summary']")); // title customer summary
 
-        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/client' and contains(@class, 'btn-primary')]"));
-        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/import' and contains(@class, 'btn-primary')]"));
-        driver.findElement(By.xpath("//a[@href = 'https://crm.anhtester.com/admin/clients/all_contacts' and contains(@class, 'btn-default')]"));
+
 
 
         driver.findElement(By.xpath("//span[normalize-space()='Total Customers']")); //text total customer
