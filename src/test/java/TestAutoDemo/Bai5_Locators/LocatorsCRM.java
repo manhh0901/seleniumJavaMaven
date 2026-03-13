@@ -13,7 +13,7 @@ public class LocatorsCRM {
 
     // trang login
     public static String titleLogin = "//h1[normalize-space()='Login']";
-    public static String inputEmail = "//label[@for='email']";
+    public static String inputEmail = "//input[@id='email']";
     public static String inputPwd = "//input[@id='password']";
     public static String checkboxRemember = "//input[@id='remember']";
     public static String buttonLogin = "//button[contains(@class,'btn-primary')]" ;
@@ -25,7 +25,7 @@ public class LocatorsCRM {
     // trang dashboard
 
     public static String menuDashboard = "//span[@class='menu-text' and normalize-space()='Dashboard']";
-    public static String menuCustomer = "//span[@class='menu-text' and normalize-space()='Customer']";
+    public static String menuCustomer = "//span[@class='menu-text' and normalize-space()='Customers']";
     public static String menuContracts= "//span[@class='menu-text' and normalize-space()='Contracts']";
     public static String menuProjects = "//span[@class='menu-text' and normalize-space()='Projects']";
     public static String menuSales = "//span[@class='menu-text' and normalize-space()='Sales']";
