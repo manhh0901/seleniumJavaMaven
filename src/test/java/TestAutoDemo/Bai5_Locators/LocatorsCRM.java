@@ -30,11 +30,50 @@ public class LocatorsCRM {
     public static String menuProjects = "//span[@class='menu-text' and normalize-space()='Projects']";
     public static String menuSales = "//span[@class='menu-text' and normalize-space()='Sales']";
 
-    //
+    //customer summary
     public static String addNewCus = "//a[contains(@href, 'client') and contains(@class, 'btn-primary')]";
     public static String importCustomer = "//a[contains(@href, 'import') and contains(@class, 'btn-primary')]";
     public static String allContacts= "//a[contains(@href, 'all_contacts') and contains(@class, 'btn-default')]";
-    public static String searchCustomer;
+
+    public static String titleCustomerSummary = "//span[normalize-space()='Customers Summary']";
+    public static String totalCustomer ="//span[normalize-space()='Total Customers']";
+    public static String activeCustomer = "//span[normalize-space()='Active Customers']";
+    public static String inactiveCustomer = "//span[normalize-space()='Inactive Customers']";
+    public static String activeContacts ="//span[normalize-space()='Active Contacts']";
+    public static String inactiveContacts = "//span[normalize-space()='Inactive Contacts']";
+    public static String contactsLoginToday = "//span[@data-title = 'Contacts Logged In Today']";
+    public static String searchCustomer = "//input[@type= 'search' and contains(@class, 'form-control input-sm')]";
+
+    // session export, bulk actions
+    public static String numberItemsOnaPage = "//select[@name = 'clients_length']";
+    public static String exportButton ="//span[text()= 'Export']";
+    public static String bulkActions = "//span[text() = 'Bulk Actions']";
+    public static String reloadButton = "//button[@data-original-title= 'Reload']";
+
+    // header column
+    public static String checkBoxAll = "//input[@id = 'mass_select_all";
+    public static String number = "//th[@id = 'th-number']";
+    public static String headerCompany = "//th[@id = 'th-company']";
+    public static String headerPrimaryContact = "//th[@id = 'th-primary-contact']";
+    public static String headerPrimaryEmail = "//th[@id = 'th-primary-contact-email']";
+    public static String headerPhone = "//th[@id = 'th-phone']";
+    public static String headerActive = "//th[@id = 'th-active']";
+    public static String headerGroups = "//th[@id = 'th-groups']";
+    public static String headerDateCreated = "//th[@id = 'th-date-created']";
+
+    // Add new customer - customer page
+    public static String inputCompany= "//input[@id = 'company']";
+    public static String inputVAT= "//input[@id = 'vat']";
+    public static String inputPhoneNumber= "//input[@id = 'phonenumber']";
+    public static String inputWebsite= "//input[@id = 'website']";
+    public static String selectGroups ="//button[@data-id='groups_in[]']";
+    public static String formSearchInput = "//button[@data-id='groups_in[]']//following-sibling::div/div/input";
+    public static String itemVIP ="//button[@data-id='groups_in[]']/following-sibling::div//span[normalize-space()='VIP']";
+    public static String selectAllButton ="//button[@data-id='groups_in[]']/following-sibling::div//button[text() = 'Select All']";
+    public static String deselectAllButton ="//button[@data-id='groups_in[]']/following-sibling::div//button[text() = 'Deselect All']";
+    public static String currencyDropdown = "//button[@data-id = 'default_currency']";
+
+
 
     public static void main(String[] args) {
         WebDriver driver;
@@ -43,52 +82,7 @@ public class LocatorsCRM {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
-
-        //xpath 1-5 menu Customers
-        driver.findElement(By.xpath("//li[@class='menu-item-customers']"));// Menu customer
-
-        // Bắt xpath trang Customers Summary (các button, input search, header, label)
-        driver.findElement(By.xpath("//input[@id='search_input']")); // search input
-        driver.findElement(By.xpath("//div[@id='top_search_button']"));// button search
-        driver.findElement(By.xpath("//span[normalize-space()='Customers Summary']")); // title customer summary
-
-
-
-
-        driver.findElement(By.xpath("//span[normalize-space()='Total Customers']")); //text total customer
-        driver.findElement(By.xpath("//span[normalize-space()='Active Customers']"));
-        driver.findElement(By.xpath("//span[normalize-space()='Inactive Customers']"));
-        driver.findElement(By.xpath("//span[normalize-space()='Active Contacts']"));
-        driver.findElement(By.xpath("//span[normalize-space()='Inactive Contacts']"));
-        driver.findElement(By.xpath("//span[@data-title = 'Contacts Logged In Today']"));
-
-        driver.findElement(By.xpath("//select[@name = 'clients_length']"));
-        driver.findElement(By.xpath("//button[contains(@class, 'buttons-collection')]"));
-        driver.findElement(By.xpath("//span[text() = 'Bulk Actions']"));
-        driver.findElement(By.xpath("//button[@data-original-title = 'Reload']"));
-        driver.findElement(By.xpath("//span[@class = 'input-group-addon']"));
-        driver.findElement(By.xpath("//input[@type= 'search' and @class = 'form-control input-sm']"));
-
-        //list table
-        driver.findElement(By.xpath("//input[@id = 'mass_select_all']"));//check box all
-        driver.findElement(By.xpath("//th[@id = 'th-number']"));//sort
-        driver.findElement(By.xpath("//th[@id = 'th-company']"));// header company
-        driver.findElement(By.xpath("//th[@id = 'th-primary-contact']"));
-        driver.findElement(By.xpath("//th[@id = 'th-primary-contact-email']"));
-        driver.findElement(By.xpath("//th[@id = 'th-phone']"));
-        driver.findElement(By.xpath("//th[@id = 'th-active']"));
-        driver.findElement(By.xpath("//th[@id = 'th-groups']"));
-        driver.findElement(By.xpath("//th[@id = 'th-date-created']"));
-
         // add new customer
-        driver.findElement(By.xpath("//label[@for = 'company']"));
-        driver.findElement(By.xpath("//input[@id = 'company']"));
-        driver.findElement(By.xpath("//label[@for = 'vat']"));
-        driver.findElement(By.xpath("//input[@id = 'vat']"));
-        driver.findElement(By.xpath("//label[@for = 'phonenumber']"));
-        driver.findElement(By.xpath("//input[@id = 'phonenumber']"));
-        driver.findElement(By.xpath("//label[@for = 'website']"));
-        driver.findElement(By.xpath("//input[@id = 'website']"));
         driver.findElement(By.xpath("//label[text()= 'Groups']"));
         driver.findElement(By.xpath("//button[@type= 'button' and @data-id='groups_in[]']"));
         driver.findElement(By.xpath("//a[@class ='btn btn-default' and @data-toggle ='modal' ]"));
