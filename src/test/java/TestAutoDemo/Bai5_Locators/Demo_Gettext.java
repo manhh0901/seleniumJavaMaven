@@ -21,11 +21,24 @@ public class Demo_Gettext {
        Thread.sleep(2000);
        driver.findElement(By.xpath(LocatorsCRM.menuCustomer)).click();
         Thread.sleep(2000);
-        System.out.println("Header customer page " + driver.findElement(By.xpath(LocatorsCRM.titleCustomerSummary)).getText());
+
+        String headerCustomerTest = driver.findElement(By.xpath(LocatorsCRM.titleCustomerSummary)).getText();
+
+        if(headerCustomerTest.equals("Customers Summary")){
+            System.out.println("CORRECT");
+        }
         Thread.sleep(2000);
-        driver.quit();
+
         //submit như chức năng enter khi user nhập hết form và nhấn enter
 
+        //  Count number of customer
+        driver.findElement(By.xpath("//span[normalize-space()='Total Customers']/preceding-sibling::span")).getText();
+        driver.findElement(By.xpath("//span[normalize-space()='Total Customers']/preceding-sibling::span")).getTagName();
+
+        System.out.println(driver.findElement(By.xpath("//span[normalize-space()='Active Customers']")).getCssValue("color"));
+        System.out.println( driver.findElement(By.xpath("//span[normalize-space()='Active Customers']")).getCssValue("font-family"));
+
+        driver.quit();
     }
 
 
