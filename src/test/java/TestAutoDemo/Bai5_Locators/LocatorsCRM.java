@@ -23,12 +23,17 @@ public class LocatorsCRM {
     public static String alertRequirePwd = "//div[normalize-space()='The Password field is required']";
 
     // trang dashboard
-
     public static String menuDashboard = "//span[@class='menu-text' and normalize-space()='Dashboard']";
     public static String menuCustomer = "//span[@class='menu-text' and normalize-space()='Customers']";
     public static String menuContracts= "//span[@class='menu-text' and normalize-space()='Contracts']";
     public static String menuProjects = "//span[@class='menu-text' and normalize-space()='Projects']";
     public static String menuSales = "//span[@class='menu-text' and normalize-space()='Sales']";
+    public static String dashboardOptions = "//div[normalize-space() ='Dashboard Options']";
+
+    //Menu Sale - Proposals
+    public static String proposalSubMenu = "//span[normalize-space() ='Proposals']";
+    public static String addNewProposal = "//a[normalize-space() ='New Proposal']";
+
 
     //customer summary
     public static String addNewCus = "//a[contains(@href, 'client') and contains(@class, 'btn-primary')]";
@@ -51,7 +56,7 @@ public class LocatorsCRM {
     public static String reloadButton = "//button[@data-original-title= 'Reload']";
 
     // header column
-    public static String checkBoxAll = "//input[@id = 'mass_select_all";
+    public static String checkBoxAll = "//input[@id = 'mass_select_all']";
     public static String number = "//th[@id = 'th-number']";
     public static String headerCompany = "//th[@id = 'th-company']";
     public static String headerPrimaryContact = "//th[@id = 'th-primary-contact']";
