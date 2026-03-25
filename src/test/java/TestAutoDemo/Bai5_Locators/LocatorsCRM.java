@@ -77,7 +77,11 @@ public class LocatorsCRM {
     public static String selectAllButton ="//button[@data-id='groups_in[]']/following-sibling::div//button[text() = 'Select All']";
     public static String deselectAllButton ="//button[@data-id='groups_in[]']/following-sibling::div//button[text() = 'Deselect All']";
     public static String currencyDropdown = "//button[@data-id = 'default_currency']";
+    public static String optionLanguageDynamic = "//span[normalize-space() = '%s']";
 
+    public static String SelectXpathLanguage(String language){
+        return String.format(optionLanguageDynamic, language);
+    }
 
 
     public static void main(String[] args) {
