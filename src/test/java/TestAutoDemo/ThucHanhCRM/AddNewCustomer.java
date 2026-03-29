@@ -5,6 +5,8 @@ import TestAutoDemo.common.BaseTest;
 import org.openqa.selenium.By;
 
 import java.sql.Driver;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class AddNewCustomer extends BaseTest {
     public static void loginCRM() throws InterruptedException {
@@ -17,6 +19,10 @@ public class AddNewCustomer extends BaseTest {
     }
 
     public static void AddNewCustomer() throws InterruptedException {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter Formatter = DateTimeFormatter.ofPattern("ddMMYYYY HHmmss");
+        String formatted = now.format(Formatter);
+        System.out.println(formatted);
         Thread.sleep(2000);
         driver.findElement(By.xpath(LocatorsCRM.menuCustomer)).click();
 
