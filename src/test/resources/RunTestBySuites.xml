@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteRunByPackage" verbose="1">
+    <test name="FirstTest">
+        <packages>
+            <package name="TestAutoDemo.Annotations"></package>
+            <package name="TestAutoDemo.Annotations_2"></package>
+        </packages>
+    </test>
+</suite>
