@@ -9,12 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import javax.swing.*;
 import java.time.Duration;
 
 public class HandleDropdown extends BaseTest {
 
+    @Test
     public static void DropdownStatic () throws InterruptedException {
         // so luong gia tri trong dropdown khong thay doi
         //https://demoqa.com/select-menu
