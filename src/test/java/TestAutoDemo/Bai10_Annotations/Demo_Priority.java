@@ -16,6 +16,6 @@ public class Demo_Priority {
 
     @Test(priority = 3)
     public void testCase3() {
-        System.out.println("Test case 3");
+        System.out.println("Test case 34");
     }
 }
