@@ -4,21 +4,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
 public class BaseTest {
 
     public static WebDriver driver;
+    SoftAssert softassert = new SoftAssert();
 
     @BeforeClass
     public void runBeforeClassBase() throws InterruptedException {
-        System.out.println("BASE TEST:  @BeforeClass ");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     }
 
     @AfterClass
     public void runAfterClassBase() throws InterruptedException {
         System.out.println("BASE TEST:  @AfterClass ");
+        driver.quit();
+        softassert.assertAll();
+
     }
 
     public static void CreateDriver () throws InterruptedException {
@@ -33,7 +41,5 @@ public class BaseTest {
 
     }
 
-    public static void main(String[] args) throws InterruptedException {
 
-    }
 }
