@@ -4,7 +4,7 @@ import TestAutoDemo.Bai5_Locators.LocatorsCRM;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTestAnnotations extends BaseTest_Annotations {
 
     @Test (priority = 1)
     public void testLoginSuccess() throws InterruptedException {
