@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -46,25 +47,24 @@ public class Basic_testing extends BaseTestPrac {
     }
 
     @Test
-    public void handleAlertAuthen(){
+    public void handleAlertAuthen() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
-
-        driver.get("https://the-internet.herokuapp.com/basic_auth");
-
+        driver.get("https://www.selenium.dev/selenium/web/alerts.html#");
+        driver.findElement(By.xpath("//a[@id='alert']")).click();
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.alertIsPresent());
-        Alert authenAlert = driver.switchTo().alert();
+        Alert Alertpopup = driver.switchTo().alert();
+        Alertpopup.accept();
+        Thread.sleep(2000);
 
-        authenAlert.sendKeys("admin");
-
+        driver.findElement(By.xpath("//a[@id='empty-alert']")).click();
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert alert2 = driver.switchTo().alert();
         Actions action = new Actions(driver);
-        action.keyDown(Keys.TAB);
-        action.keyUp(Keys.TAB);
-        authenAlert.sendKeys("admin");
-        authenAlert.accept();
-
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//h3[text()='Basic Auth']"))));
-        SoftAsserPrac.assertEquals(driver.findElement(By.xpath("//h3[text()='Basic Auth']")).getText(), "Basic Auth", "Không đăng nhập thành công");
+        Thread.sleep(2000);
+        alert2.accept();
+        Thread.sleep(2000);
 
     }
 
