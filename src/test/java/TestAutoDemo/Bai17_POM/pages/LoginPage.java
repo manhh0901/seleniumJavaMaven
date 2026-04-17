@@ -20,8 +20,10 @@ public class LoginPage {
     private By checkboxRememberMe = By.id("remember");
     private By buttonLogin = By.xpath("//button[normalize-space()='Login']");
     private By errormessage = By.id("alerts");
-    private By errorMessageRequirePass = By.xpath("//div[@normalize-space()='The Password field is required.']");
-    private By errorMessageRequireEmail = By.xpath("//div[@normalize-space()='The Email Address field is required.']");
+
+    // có thể viết chung 1 hàm, truyen tham so vao
+    private By errorMessageRequirePass = By.xpath("//div[normalize-space()='The Password field is required.']");
+    private By errorMessageRequireEmail = By.xpath("//div[normalize-space()='The Email Address field is required.']");
 
     // khai bao cac Phuong thuc, ham xu ly trong noi bo trang login
 
@@ -48,6 +50,19 @@ public class LoginPage {
         boolean isElementPresent = driver.findElements(By.xpath("//span[normalize-space()='Dashboard']")).size() > 0 ;
         Assert.assertTrue(isElementPresent,"Not found");
     }
+
+    public void verifyLoginFailedWithInvalidEmail(){
+        boolean isElementPresent1 =  driver.findElements(errorMessageRequireEmail).size() > 0;
+        Assert.assertTrue(isElementPresent1,"Error message is not found");
+
+    }
+
+    public void verifyLoginFailedWithInvalidPassword(){
+        boolean isElementPresent =  (driver.findElements(errorMessageRequirePass)).size() > 0;
+        Assert.assertTrue(isElementPresent,"Error message is not found");
+
+    }
+
 
 
 }
