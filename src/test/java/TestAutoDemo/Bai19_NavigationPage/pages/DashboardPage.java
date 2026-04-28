@@ -1,6 +1,7 @@
 package TestAutoDemo.Bai19_NavigationPage.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -20,6 +21,13 @@ public class DashboardPage extends Basepages {
 
     //Khai báo các hàm xử lý trong nội bộ trang Dashboard
     public void verifyDashboardPageDisplayed() {
+        boolean isDisplayed = false;
+
+        try {
+            isDisplayed = driver.findElement(buttonDashboardOption).isDisplayed();
+        }catch (NoSuchElementException e){
+            isDisplayed = false;
+        }
         boolean isElementPresent = driver.findElements(buttonDashboardOption).size() > 0;
         Assert.assertTrue(isElementPresent, "Dashboard page is not displayed.");
     }

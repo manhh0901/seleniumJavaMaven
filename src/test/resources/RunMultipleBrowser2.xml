@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteRunByCommon" verbose="1">
+    <test name="FirstTest">
+<!--        <parameter name="value1" value="3"></parameter>-->
+        <parameter name="browser" value="edge"></parameter>
+            <classes>
+                <class name="TestAutoDemo.Bai23_MultipleBrowser.TestDemoMultiple">
+
+                </class>
+            </classes>
+    </test>
+
+</suite>

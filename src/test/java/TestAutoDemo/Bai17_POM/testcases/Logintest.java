@@ -2,6 +2,7 @@ package TestAutoDemo.Bai17_POM.testcases;
 
 import TestAutoDemo.Bai17_POM.pages.LoginPage;
 import TestAutoDemo.common.BaseTest;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import java.time.Duration;
 public class Logintest extends BaseTest {
 
     private LoginPage loginpage;
+    private WebDriver driver;
 
     @Test(priority = 1,description = "TC001: Verify user can login with valid credentials")
     public void testLoginWithValidCredentials() {

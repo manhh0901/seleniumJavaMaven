@@ -29,6 +29,8 @@ public class testPopup extends BaseTest {
         driver.findElement(By.xpath("//button[@id='tabButton']")).click();
         Thread.sleep(1000);
 
+
+        // chỉ áp dụng cho 2 tab.
         Set <String> windows = driver.getWindowHandles();
         for (String id : windows){
             System.out.println("ID all browser: " + id);

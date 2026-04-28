@@ -39,11 +39,12 @@ public class LoginPage {
         driver.findElement(buttonLogin).click();
     }
 
-    public void loginCRM(String email, String password){
+    public DashboardPage loginCRM(String email, String password){
         driver.get("https://crm.anhtester.com/admin/authentication");
         enterEmail(email);
         enterPassword(password);
         clickLoginButton();
+        return new DashboardPage(driver);
     }
 
     public void verifyLoginSuccess(){

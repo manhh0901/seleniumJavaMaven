@@ -9,11 +9,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
-
 public class BaseTest {
 
     public static WebDriver driver;
     SoftAssert softassert = new SoftAssert();
+
 
     @BeforeMethod
     public void runBeforeClassBase() throws InterruptedException {
@@ -37,10 +37,6 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("Create Driver");
         Thread.sleep(1000);
-    }
-
-    public  static void QuitDriver(){
-
     }
 
 

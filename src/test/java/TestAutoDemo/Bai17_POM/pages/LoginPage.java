@@ -1,5 +1,6 @@
 package TestAutoDemo.Bai17_POM.pages;
 
+import TestAutoDemo.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -9,6 +10,7 @@ public class LoginPage {
 
     //khai bao ham xau dung
     public LoginPage(WebDriver driver){
+
         this.driver = driver;
         //driver = _driver (_driver là tham số truyền vao ham)
 
@@ -62,6 +64,7 @@ public class LoginPage {
         Assert.assertTrue(isElementPresent,"Error message is not found");
 
     }
+
 
 
 

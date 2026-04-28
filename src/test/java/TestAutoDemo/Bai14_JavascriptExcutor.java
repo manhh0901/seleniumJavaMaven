@@ -22,9 +22,9 @@ public class Bai14_JavascriptExcutor extends BaseTest {
         Thread.sleep(2000);
 
         // HÀM SENDKEY
-        js.executeScript("document.getElementById('email').setAttribute('value','admin02@mailinator.com');");
+        js.executeScript("document.getElementById('email').setAttribute('value','admin02@mailinator.com')");
         Thread.sleep(2000);
-        js.executeScript("document.getElementById('password').setAttribute('value','123456');");
+        js.executeScript("document.getElementById('password').setAttribute('value','123456')");
         Thread.sleep(2000);
 
     }
@@ -35,9 +35,9 @@ public class Bai14_JavascriptExcutor extends BaseTest {
         driver.get("https://crm.anhtester.com/admin/authentication");
         Thread.sleep(3000);
         // HÀM SENDKEY
-        js.executeScript("document.getElementById('email').setAttribute('value','admin02@mailinator.com');");
+        js.executeScript("document.getElementById('email').setAttribute('value','admin02@mailinator.com')");
         Thread.sleep(3000);
-        js.executeScript("document.getElementById('password').setAttribute('value','123456');");
+        js.executeScript("document.getElementById('password').setAttribute('value','123456')");
         Thread.sleep(3000);
 
     }

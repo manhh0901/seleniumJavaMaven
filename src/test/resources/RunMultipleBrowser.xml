@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteRunByCommon" verbose="1">
+    <test name="FirstTest">
+<!--        <parameter name="value1" value="3"></parameter>-->
+        <parameter name="value2" value="4"></parameter>
+            <classes>
+                <class name="TestAutoDemo.Bai23_MultipleBrowser.MultipleBroswerTestcase">
+                    <methods>
+                        <include name="Sum"/>
+                        <include name="Cal"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+
+    <test name="SecondTest">
+        <parameter name="value1" value="10"></parameter>
+        <parameter name="value2" value="4"></parameter>
+        <classes>
+            <class name="TestAutoDemo.Bai23_MultipleBrowser.MultipleBroswerTestcase">
+                <methods>
+                    <include name="Cal2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

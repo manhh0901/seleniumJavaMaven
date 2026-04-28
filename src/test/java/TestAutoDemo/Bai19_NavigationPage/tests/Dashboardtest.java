@@ -12,15 +12,11 @@ public class Dashboardtest extends BaseTest {
     @Test
     public void testLabelProjectInProgress() {
         loginPage = new LoginPage(driver);
-        loginPage.loginCRM("admin@example.com", "123456");
-        loginPage.verifyLoginSuccess();
 
-        dashboardPage = new DashboardPage(driver);
+        dashboardPage = loginPage.loginCRM("admin@example.com","123456");
         dashboardPage.verifyDashboardPageDisplayed();
 
         String totalProjectsInProgressOnDashboard = dashboardPage.getTotalProjectsInProgress();
-
-
         //dashboardPage.verifyTotalProjectsInProgress();
     }
 }
